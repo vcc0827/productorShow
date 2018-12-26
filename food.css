@@ -1,0 +1,813 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.z-1 {
+  z-index: -1;
+}
+
+.z2 {
+  z-index: 2;
+}
+
+.lbmg img {
+  width: 100%;
+}
+
+.click-able {
+  cursor: pointer;
+}
+
+.clear {
+  clear: both;
+}
+
+.swiper-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/*.swiper-slide img {*/
+/*display: block;*/
+/*width: 100%;*/
+/*max-width:100%;*/
+/*}*/
+
+/*Top start*/
+.my-top {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.my-top .nav {
+  width: 100%;
+  height: 80px;
+}
+
+.logo {
+  position: absolute;
+  left: 19.3%;
+  top: 35px;
+}
+
+.my-nav {
+  position: relative;
+  float: left;
+  left: 35%;
+  z-index: 10;
+}
+
+.nav {
+  float: left;
+}
+
+ul li {
+  list-style: none;
+}
+
+.nav > li {
+  float: left;
+}
+
+ul a {
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  color: #333;
+  background-color: #fff;
+}
+
+ul > li > ul {
+  width: 150px;
+  height: 356px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+
+}
+
+ul > li > ul > li {
+  width: 150px;
+  height: 45px;
+  background: #fff;
+  border-bottom: 1px solid #dddddd;
+}
+
+ul > li > ul > li > a {
+  width: 150px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.drop-down {
+  position: relative;
+}
+
+.drop-down-content {
+  padding: 0;
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+li a:hover {
+  color: #ed6d00;
+  background-color: #f5f5f5;
+  width: 80px;
+  height: 78px;
+  border-bottom: 2px solid #ed6d00;
+}
+
+.drop-down-content a {
+  color: #666666;
+  width: 150px;
+  height: 44px;
+  border-bottom: 0 solid #fff;
+}
+
+.drop-down-content a:hover {
+  color: #666666;
+  width: 150px;
+  height: 44px;
+  border-bottom: 1px solid #fff;
+}
+
+.drop-down-content li:hover a {
+  background-color: #f5f5f5;
+}
+
+.nav .drop-down:hover .drop-down-content {
+  display: block;
+  z-index: 1;
+}
+
+.logo-right {
+  position: relative;
+  right: 10%;
+  top: 33px;
+  float: right;
+}
+
+/*Top end*/
+
+/*Banner start*/
+.top {
+  position: relative;
+  top: 1px;
+}
+
+.banner1 {
+  width: 100%;
+}
+/*包裹自定义分页器的div的位置等CSS样式*/
+.swiper-pagination-custom{
+  bottom: 16px;
+  left: 0;
+  width: 8px;
+  height:8px;
+}
+.banner1-c{
+  text-align:center;
+}
+
+/*自定义分页器的样式，这个你自己想要什么样子自己写*/
+.swiper-pagination-customs-top {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  background: #afafaf;
+  opacity: .3;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius:100%;
+  bottom:0;
+}
+
+/*自定义分页器激活时的样式表现*/
+.swiper-pagination-customs-top-active {
+  height: 10px;
+  opacity: 1;
+  border-radius:100%;
+  background-color: #ed6d00;
+  width:10px;
+}
+
+.banner1-top {
+  position: absolute;
+  top: 13%;
+  left: 19.3%;
+}
+
+.banner1-down {
+  position: absolute;
+  left: 19.3%;
+  top: 71.7%;
+}
+
+/*Banner end*/
+
+/*入口 start*/
+.my-enter {
+  width: 100%;
+  height: 300px;
+  background-color: #fafafa;
+  margin-top: -0.2%;
+}
+
+.enter-wrap {
+  width: 100%;
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 19.3%;
+}
+
+.enter-box {
+  margin-right: 6.5%;
+  margin-left: 3.5%;
+  float: left;
+}
+
+.m1, .m2, .m3, .m4 {
+  width: 100px;
+  height: 100px;
+}
+
+.m1 {
+  background: url("../src/assets/sprites/enter.png") no-repeat -20px -20px;
+}
+
+.m1:hover {
+  background: url("../src/assets/sprites/enter.png") no-repeat -20px -160px;
+}
+
+.m1:hover + .c3 {
+  font-weight: bolder;
+}
+
+.m2 {
+  background: url("../src/assets/sprites/enter.png") no-repeat -140px -20px;
+}
+
+.m2:hover {
+  background: url("../src/assets/sprites/enter.png") no-repeat -140px -160px;
+}
+
+.m2:hover + .c3 {
+  font-weight: bolder;
+}
+
+.m3 {
+  background: url("../src/assets/sprites/enter.png") no-repeat -260px -20px;
+}
+
+.m3:hover {
+  background: url("../src/assets/sprites/enter.png") no-repeat -260px -160px;
+}
+
+.m3:hover + .c3 {
+  font-weight: bolder;
+}
+
+.m4 {
+  background: url("../src/assets/sprites/enter.png") no-repeat -380px -20px;
+}
+
+.m4:hover {
+  background: url("../src/assets/sprites/enter.png") no-repeat -380px -160px;
+}
+
+.m4:hover + .c3 {
+  font-weight: bolder;
+}
+
+.c3 {
+  margin-top: 29px;
+  width: 100px;
+  height: 24px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  color: #333333;
+}
+
+.c3:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*入口end*/
+
+/*资讯 start*/
+.msg {
+  width: 100%;
+  height: 590px;
+  background-color: #ffffff;
+
+}
+
+.banner3 {
+  width: 541px;
+  height: 348px;
+  position: relative;
+  left: 19.3%;
+  top: 12%;
+}
+
+/*包裹自定义分页器的div的位置等CSS样式*/
+.swiper-pagination-custom{
+  bottom: 16px;
+  left: 0;
+  width: 100%;
+  margin-right:10px;
+}
+.banner3-c{
+  text-align:right;
+}
+/*自定义分页器的样式，这个你自己想要什么样子自己写*/
+.swiper-pagination-customs-mid {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  background: #dddddd;
+  opacity: .3;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/*自定义分页器激活时的样式表现*/
+.swiper-pagination-customs-mid-active {
+  opacity: 1;
+  background-color: #ed6d00;
+}
+
+.msg-txt {
+  width: 560px;
+  height: 332px;
+  position: relative;
+  top: -47%;
+  left: 56%;
+}
+
+.msg-top {
+  width: 100%;
+  height: 112px;
+}
+
+.msg-left {
+  float: left;
+  width: 13%;
+}
+
+.left-top {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #ed6e02;
+  font-size: 24px;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.left-mid {
+  font-size: 14px;
+  color: #999999;
+  text-align: center;
+}
+
+.msg-right {
+  width: 87%;
+  float: left;
+}
+
+.msg-title {
+  font-size: 16px;
+  color: #333333;
+}
+
+.msg-content {
+  width: 483px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: #666666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.msg-down {
+  width: 100%;
+  height: 112px;
+  position:relative;
+  top:30%;
+}
+
+.msg-line {
+  clear: both;
+}
+
+.msg-line {
+  width: 540px;
+  height: 1px;
+  background-color: #eeeeee;
+  position: relative;
+  top:12%;
+}
+
+/*资讯 end*/
+
+/*参展范围*/
+.range {
+  width: 100%;
+  text-align: center;
+}
+
+.range-title {
+  width: 123px;
+  height: 44px;
+  position: relative;
+  left: 18.9%;
+}
+
+.right-top {
+  width: 40px;
+  height: 40px;
+  float: right;
+  top: 0;
+  background: #ed6d00;
+  opacity: 0.3;
+}
+
+.left-bottom {
+  width: 120px;
+  height: 40px;
+  float: left;
+  position: relative;
+  bottom: 36px;
+  background: #ed6d00;
+  opacity: 0.99;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.range-line {
+  width: 1170px;
+  height: 2px;
+  background: #ed6d00;
+  float: left;
+  margin-top: -36px;
+}
+
+.range-images {
+  width: 100%;
+}
+
+.range-row {
+  display: inline-block;
+}
+
+.range-box {
+  width: 170px;
+  height: 204px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #eceef0;
+  float: left;
+  margin: 15px 15px 15px 15px;
+}
+
+.show-box {
+  width: 170px;
+  height: 204px;
+  display: block;
+}
+
+.img-down {
+  position: relative;
+  top: 20%;
+}
+
+.range-img1-1 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -10px -11px;
+}
+
+.range-img1-2 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -121px -11px;
+}
+
+.range-img1-3 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -232px -11px;
+}
+
+.range-img1-4 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -343px -11px;
+}
+
+.range-img1-5 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -454px -11px;
+}
+
+.range-img1-6 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -566px -11px;
+}
+
+.range-img2-1 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -10px -123px;
+}
+
+.range-img2-2 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -120px -123px;
+}
+
+.range-img2-3 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -230px -123px;
+}
+
+.range-img2-4 {
+  width: 90px;;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -340px -124px;
+}
+
+.range-img2-5 {
+  width: 90px;
+  height: 90px;;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -452px -125px;
+}
+
+.range-img2-6 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -563px -125px;
+}
+
+.range-img3-1 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -10px -236px;
+}
+
+.range-img3-2 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -120px -235px;
+}
+
+.range-img3-3 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -230px -236px;
+}
+
+.range-img3-4 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -340px -236px;
+}
+
+.range-img3-5 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -450px -236px;
+}
+
+.range-img3-6 {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: url("../src/assets/sprites/range.png") no-repeat -560px -235px;
+}
+
+.range-word {
+  width: 100%;
+  height: 14px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 14px;
+  letter-spacing: 0px;
+  color: #333333;
+  text-align: center;
+  position: relative;
+  bottom: -32%;
+}
+
+.hide-box {
+  width: 170px;
+  height: 204px;
+  background: #ed6d00;
+  display: none;
+}
+
+.range-box:hover .hide-box {
+  display: block;
+}
+
+.range-box:hover .show-box {
+  display: none;
+}
+
+.hide-title {
+  width: 100%;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  top: 20%;
+}
+
+.hide-content {
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  top: 30%;
+}
+
+.com {
+  width: 100%;
+  height: 320px;
+  background: url("../src/assets/com-bg.png") no-repeat;
+}
+
+.com-title {
+  width: 100%;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: #333333;
+  text-align: center;
+  position: relative;
+  top: 21%;
+}
+
+.com-bg {
+  width: 100%;
+  position: relative;
+  top: 40%;
+}
+
+.mid {
+  background: #ffffff;
+  width: 1170px;
+  height: 110px;
+  margin: 0 auto;
+}
+
+.banner2 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.z-1 {
+  z-index: -1;
+}
+
+.bottom-img {
+
+}
+
+.b2a {
+  width: 100%;
+  height: 100%;
+}
+
+.b2mg {
+
+}
+
+.button-next {
+  outline: none;
+  background: url("../src/assets/button-next.png");
+  width: 40px;
+  height: 110px;
+  position: absolute;
+  top: 22px;
+  right: 0px;
+}
+
+.button-prev {
+  outline: none;
+  background: url("../src/assets/button-prev.png");
+  width: 40px;
+  height: 110px;
+  position: absolute;
+  top: 22px;
+  left: 0px;
+}
+
+/*foot*/
+.foot {
+  width: 100%;
+  height: 180px;
+  background-color: #403f3f;
+}
+
+.foot-up {
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #aaaaaa;
+  position: relative;
+  top: 20%;
+  left: 19%;
+}
+
+.foot-down {
+  width: 100%;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #999999;
+  position: relative;
+  left: 19%;
+  bottom: -30%;
+  float: left;
+}
+
+.foot-pic {
+  width: 100%;
+  margin: 0 auto;
+  text-align: right;
+  position: relative;
+  right: 19%;
+}

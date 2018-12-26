@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="dist/css/swiper.min.css">
+    <!-- Demo styles -->
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .border-r, .border-b {
+            border: 1px solid #ebebeb;
+        }
+
+        .wraper {
+            display: grid;
+            grid-template-rows: 36.85% 59.44% 3.7%;
+            grid-template-columns: 100%;
+            height: 100%;
+        }
+
+        .item1 {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .item2 {
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 18.75% 62.5% 18.75%;
+            grid-template-rows: 23.3% 53.2% 23.3%;
+        }
+
+        .items {
+            grid-column: 2/3;
+            grid-row: 2/3;
+            display: grid;
+            grid-template-columns: 33.3% 66.6%;
+            border: 1px #ebebeb solid;
+            background: #ffffff;
+        }
+
+        .item2-1 {
+
+        }
+
+        .item2-2 {
+            display: grid;
+            grid-template-columns: 33.33% 33.33% 33.33%;
+            grid-template-rows: 50% 50%;
+
+        }
+
+        .z-1 {
+            z-index: -1;
+        }
+
+        .z2 {
+            z-index: 2;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        .slide-image {
+        }
+
+        .msg {
+            width: 435px;
+            height: 261px;
+            position: absolute;
+            top: 18%;
+            left: 18%;
+            text-align: left;
+        }
+
+        .msg-title {
+            font-size: 33px;
+            position: relative;
+            top: -15%;
+        }
+
+        .title-color, .content-color {
+            color: #ffffff;
+        }
+
+        .msg-line {
+            width: 18px;
+            height: 4px;
+            background: #ffffff;
+            border-radius: 2px;
+            position: relative;
+            top: -14%;
+        }
+
+        .msg-content {
+            font-size: 14px;
+            position: relative;
+            top: -8%;
+        }
+
+        .msg-btn {
+            outline: none;
+            width: 134px;
+            height: 42px;
+            background: transparent;
+            font-size: 14px;
+            color: #fff;
+            border: 1px solid rgba(236, 237, 241, 0.6);
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            vertical-align: center;
+            cursor: pointer;
+        }
+
+        /*自定义分页器样式*/
+        /*默认样式*/
+        .swiper-pagination-customs {
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+            background: #afafaf;
+            opacity: .3;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 100%;
+            bottom: 1px;
+        }
+
+        /*高亮样式*/
+        .swiper-pagination-customs-active {
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+            border-radius: 100%;
+            background-color: #ffffff;
+        }
+
+        /*自定义前进后退按钮样式*/
+        .btn-next, .btn-prev {
+            outline: none;
+            width: 70px;
+            height: 70px;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            width: 68px;
+            height: 68px;
+            margin-top: -22px;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .btn-next {
+            background: url("image/arrow-right.png");
+            float: left;
+        }
+
+        .btn-prev {
+            background: url("image/arrow-left.png");
+            float: right;
+        }
+
+        .item-btn {
+            outline: none;
+            width: 70px;
+            height: 20px;
+            background: #1890ff;
+            font-size: 12px;
+            color: #fefefe;
+            cursor: pointer;
+        }
+
+        .item3 {
+            text-align: center;
+            font-size: 12px;
+            color: #969696;
+            width: 100%;
+            background: #161616;
+        }
+
+        .linker {
+            color: #969696;
+        }
+
+        .item-titles {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            text-align: center;
+        }
+
+        .item-title-content {
+            font-size: 32px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+<div class="wraper">
+    <div class="item1">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!--内容通过json获取!!!-->
+                    <div class="slider">
+                        <img class="slide-image z-1" src="image/show1.png" alt="">
+                        <div class="msg z2">
+                            <p class="msg-title">
+                                <a class="title-color" href="">展商秀</a></p>
+                            <div class="msg-line"></div>
+                            <p class="msg-content">
+                                <a class="content-color" href="">主办方通过展商秀平台发起的展会营销活动，通过展商邀请观众，增加展会的关注度，实现展会宣传目的，
+                                    在现场同步线下活动，实现线上线下互动，调动展会现场氛围...
+                                </a>
+                            </p>
+                            <a href="">
+                                <button class="msg-btn">了解更多</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next btn-next"></div>
+            <div class="swiper-button-prev btn-prev"></div>
+        </div>
+
+        <!-- Swiper JS -->
+        <script src="dist/js/swiper.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            let swiperJson = {
+                data: [
+                    {
+                        "title": "展商秀", "des": "主办方通过展商秀平台发起的展会营销活动，通过展商邀请观众，增加展会的关注度，实现展会宣传目的，\n" +
+                            "                                    在现场同步线下活动，实现线上线下互动，调动展会现场氛围...",
+                        "img": "image/show1.png"
+                    },
+                    {
+                        "title": "EBI 展会商业只能",
+                        "des": "为您提供专业化、个性化的智慧会展管理整体解决方案，推进智慧会展生态系统建设，应对会展业未来发展变化",
+                        "img": "image/show2.png"
+                    },
+                ]
+            };
+            console.log(swiperJson.data);
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: false,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'custom',
+                    renderCustom: function (swiper, current, total = swiperJson.length) {
+                        var customPaginationHtml = '';
+                        for (var i = 0; i < total; i++) {
+                            if (i === (current - 1)) {
+                                customPaginationHtml += '<span class="swiper-pagination-customs swiper-pagination-customs-active"></span>';
+                            }
+                            else {
+                                customPaginationHtml += '<span class="swiper-pagination-customs"></span>';
+                            }
+                        }
+                        return customPaginationHtml;
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        </script>
+    </div>
+    <div class="item2">
+        <div class="items">
+            <div class="item2-1 border-r">
+                <p class="item-title">展商秀</p>
+                <p class="item-msg">为企业参展提供一个丰富有趣的互动邀请平台
+                </p>
+                <div class="item-btn"></div>
+                <img class="item-img1" src="" alt="">
+            </div>
+            <div class="item2-2">
+                <div class="border-r border-b">
+                    <p class="item-title">业务流程管理系统</p>
+                    <p class="item-msg">BPM</p>
+                    <div class="item-btn"></div>
+                    <img class="item-img2" src="" alt="">
+                </div>
+                <div class="border-r border-b">
+                    <p class="item-title">观众数据管理中心系统</p>
+                    <p class="item-msg">VDM</p>
+                    <div class="item-btn"></div>
+                    <img class="item-img2" src="" alt="">
+                </div>
+                <div class="border-b">
+                    <p class="item-title">展位销售管理系统</p>
+                    <p class="item-msg">BMM</p>
+                    <div class="item-btn"></div>
+                    <img class="item-img2" src="" alt="">
+                </div>
+                <div class="border-r">
+                    <p class="item-title">
+                    </p>
+                    <p class="item-msg">SWS</p>
+                    <div class="item-btn"></div>
+                    <img class="item-img2" src="" alt="">
+                </div>
+                <div class="border-r">
+                    <p class="item-title">微信增强开发平台</p>
+                    <p class="item-msg">WeChat</p>
+                    <div class="item-btn"></div>
+                    <img class="item-img2" src="" alt="">
+                </div>
+                <div>
+                    <p class="item-title">贸易配对服务系统
+                    </p>
+                    <p class="item-msg">TMS</p>
+                    <div class="item-btn"></div>
+                    <img class="item-img2" src="" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="item-titles">
+            <p class="item-title-content">我们的产品</p>
+        </div>
+        <script>
+            let test = {
+                data: [
+                    {"title": "展商秀", "des": "为企业参展提供一个丰富有趣的互动邀请平台", "img": "image/img1.png"},
+                    {"title": "业务流程管理系统", "des": "BPM", "img": "image/BPM.png"},
+                    {"title": "观众数据管理中心系统", "des": "VDM", "img": "image/VDM.png"},
+                    {"title": "展位销售管理系统", "des": "BMM", "img": "image/BMM.png"},
+                    {"title": "社会化网站系统", "des": "SWS", "img": "image/SWS.png"},
+                    {"title": "微信增强开发平台", "des": "WeChat", "img": "image/WC.png"},
+                    {"title": "贸易配对服务系统", "des": "TMS", "img": "image/TMS.png"},
+                ]
+            }
+            document.getElementsByClassName("").innerHTML = test.data[0].title;
+            console.log(test.data[0].title);
+        </script>
+    </div>
+    <div class="item3">
+        <span>Copyright © 2017 i-rdesk.com All Rights Reserved.</span>
+        <a class="linker" href="">沪ICP备09006318号</a>
+    </div>
+</div>
+</body>
+</html>
