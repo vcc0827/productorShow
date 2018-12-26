@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -376,20 +376,29 @@
         <div class="item-titles">
             <p class="item-title-content">我们的产品</p>
         </div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+
         <script>
             let test = {
+
                 data: [
-                    {"title": "展商秀", "des": "为企业参展提供一个丰富有趣的互动邀请平台", "img": "image/img1.png"},
-                    {"title": "业务流程管理系统", "des": "BPM", "img": "image/BPM.png"},
-                    {"title": "观众数据管理中心系统", "des": "VDM", "img": "image/VDM.png"},
+                    {"title": "展商秀", "des": "为企业参展提供一个丰富有趣的互动邀请平台", "img": "image/img1.png",type:"0"},
+                    {"title": "业务流程管理系统", "des": "BPM", "img": "image/BPM.png",type:"1"},
+                    {"title": "观众数据管理中心系统", "des": "VDM", "img": "image/VDM.png",type:"1"},
                     {"title": "展位销售管理系统", "des": "BMM", "img": "image/BMM.png"},
                     {"title": "社会化网站系统", "des": "SWS", "img": "image/SWS.png"},
                     {"title": "微信增强开发平台", "des": "WeChat", "img": "image/WC.png"},
                     {"title": "贸易配对服务系统", "des": "TMS", "img": "image/TMS.png"},
                 ]
             }
-            document.getElementsByClassName("").innerHTML = test.data[0].title;
+$(function(){
             console.log(test.data[0].title);
+$(".item-title").html(test.data[0].title);
+//document.getElementsByClassName("").innerHTML = test.data[0].title;
+            console.log(test.data[0].title);
+})
+            
         </script>
     </div>
     <div class="item3">
