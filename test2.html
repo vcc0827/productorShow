@@ -29,15 +29,9 @@
         a {
             text-decoration: none;
         }
+        .pagination-rebuild {
 
-        .z-1 {
-            z-index: -1;
         }
-
-        .z2 {
-            z-index: 2;
-        }
-
         .newA {
             text-decoration: none;
             color: #fefefe;
@@ -358,7 +352,7 @@
             </div>
         </div>
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination pagination-rebuild"></div>
         <!-- Add Arrows -->
         <div class="swiper-button-next btn-next"></div>
         <div class="swiper-button-prev btn-prev"></div>
@@ -367,7 +361,10 @@
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <!-- Initialize Swiper -->
         <script>
-            let swiperJson = {
+
+
+
+            var swiperJson = {
                 data: [
                     {
                         "title": "展商秀", "des": "主办方通过展商秀平台发起的展会营销活动，通过展商邀请观众，增加展会的关注度，实现展会宣传目的，\n" +
@@ -382,7 +379,7 @@
                 ]
             };
             console.log(swiperJson.data);
-
+            lunbo();
             // 添加轮播代码段
             function lunbo() {
                 for (var i = 0; i < swiperJson.data.length; i++) {
@@ -407,14 +404,16 @@
                     console.log("程序段添加已执行");
                 }
             }
-
-
+            // 进行渲染
             var swiper = new Swiper('.swiper-container', {
                 loop: true,
                 autoplay: true,
                 spaceBetween: 2,
                 pagination: {
                     el: '.swiper-pagination',
+
+                    // dynamicBullets: true,
+
                     type: 'custom',
                     renderCustom: function (swiper, current, total = swiperJson.length) {
                         var customPaginationHtml = '';
@@ -436,7 +435,8 @@
                     prevEl: '.swiper-button-prev',
                 },
             });
-           lunbo();
+
+
         </script>
     </div>
     <div class="item2">
@@ -453,7 +453,7 @@
         </div>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
-            let test = {
+            var test = {
                 data: [
                     {"title": "展商秀", "des": "为企业参展提供一个丰富有趣的互动邀请平台", "img": "image/img1.png"},
                     {"title": "业务流程管理系统", "des": "BPM", "img": "image/BPM.png"},
