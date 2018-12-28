@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Swiper demo</title>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″ />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="dist/css/swiper.min.css">
     <!-- Demo styles -->
@@ -29,14 +30,19 @@
         a {
             text-decoration: none;
         }
+
         .pagination-rebuild {
 
         }
-        .newA {
-            text-decoration: none;
+        .newA-top,.newA-down{
             color: #fefefe;
+        }
+        .newA-top{
             position: relative;
             top: 19%;
+        }
+        .newA-down{
+
         }
 
         .wraper {
@@ -119,15 +125,12 @@
             width: 100%;
         }
 
-        /*.slider {*/
-            /*width: 100%;*/
-        /*}*/
 
         .slide-image {
         }
 
         .msg {
-            width: 435px;
+            width: auto;
             height: 261px;
             position: absolute;
             top: 18%;
@@ -160,20 +163,6 @@
             top: -8%;
         }
 
-        .msg-btn {
-            outline: none;
-            width: 134px;
-            height: 42px;
-            background: transparent;
-            font-size: 14px;
-            color: #fff;
-            border: 1px solid rgba(236, 237, 241, 0.6);
-            position: absolute;
-            bottom: 0;
-            text-align: center;
-            vertical-align: center;
-            cursor: pointer;
-        }
 
         /*自定义分页器样式*/
         /*默认样式*/
@@ -332,7 +321,6 @@
             max-width: 100%;
             max-height: 100%;
             float: right;
-
         }
 
         .item-img-right {
@@ -341,6 +329,23 @@
             top: 12%;
         }
 
+        @media screen and (max-width:1336px){
+            .swiper-slide{
+            }
+            .item-title-right{
+                font-size:14px;
+            }
+            body{
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 1280px){
+
+        }
+        @media screen and (max-width:1024px ){
+
+        }
     </style>
 </head>
 <body >
@@ -362,9 +367,6 @@
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <!-- Initialize Swiper -->
         <script>
-
-
-
             var swiperJson = {
                 data: [
                     {
@@ -373,7 +375,7 @@
                         "img": "image/show1.png"
                     },
                     {
-                        "title": "EBI 展会商业只能",
+                        "title": "EBI 展会商业智能",
                         "des": "为您提供专业化、个性化的智慧会展管理整体解决方案，推进智慧会展生态系统建设，应对会展业未来发展变化",
                         "img": "image/show2.png"
                     },
@@ -395,7 +397,7 @@
                         + "<a class='content-color'>" + swiperJson.data[i].des + "</a>"
                         + "</p>"
                         + "<div class='banner-btn'>"
-                        + "<a class='newA' href=\"\">"
+                        + "<a class='newA-top' href=\"\">"
                         + "<span class='banner-btn-content'>了解更多</span>" + "<span class='banner-btn-img'></span>"
                         + "</a>"
                         + "</div>"
@@ -436,8 +438,6 @@
                     prevEl: '.swiper-button-prev',
                 },
             });
-
-
         </script>
     </div>
     <div class="item2">
@@ -474,7 +474,7 @@
                 $(".item2-1").append("<p class='item-title-left'>" + test.data[0].title + "</p>"
                     + "<p class='item-msg-left'>" + test.data[0].des + "</p>"
                     + "<div class='item-btn-left'>"
-                    + "<a class='newA' href=\"\">"
+                    + "<a class='newA-down' href=\"\">"
                     + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
                     + "</a>"
                     + "</div>"
@@ -486,7 +486,7 @@
                         "<p class='item-title-right'>" + test.data[i].title + "</p>"
                         + "<p class='item-msg-right'>" + test.data[i].des + "</p>"
                         + "<div class='item-btn-right'>"
-                        + "<a class='newA' href=\"\">"
+                        + "<a class='newA-down' href=\"\">"
                         + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
                         + "</a>"
                         + "</div>"

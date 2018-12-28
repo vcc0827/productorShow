@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″ />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="dist/css/swiper.min.css">
+    <link rel="stylesheet" href="mediaTest.css">
+</head>
+<body>
+<div class="wraper">
+    <div class="top">
+        <!--轮播图-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper"></div>  <!--内容由json获取-->
+        </div>
+        <div class="swiper-button-next btn-next"></div>  <!--前进按钮-->
+        <div class="swiper-button-prev btn-prev"></div>  <!--后退按钮-->
+        <div class="swiper-pagination btn-pagination"></div>            <!--分页器-->
+
+        <script src="dist/js/swiper.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>
+            var swiperJson = {
+                data: [
+                    {
+                        "title": "展商秀", "des": "主办方通过展商秀平台发起的展会营销活动，通过展商邀请观众，增加展会的关注度，实现展会宣传目的，\n" +
+                            "                                    在现场同步线下活动，实现线上线下互动，调动展会现场氛围...",
+                        "img": "image/show1.png"
+                    },
+                    {
+                        "title": "EBI 展会商业只能",
+                        "des": "为您提供专业化、个性化的智慧会展管理整体解决方案，推进智慧会展生态系统建设，应对会展业未来发展变化",
+                        "img": "image/show2.png"
+                    },
+                ]
+            };
+            console.log(swiperJson.data);
+            lunbo();
+            // 添加轮播代码段
+            function lunbo() {
+                for (var i = 0; i < swiperJson.data.length; i++) {
+                    $(".swiper-wrapper").append("<div class='swiper-slide '>"
+                        + "<img class='slide-image' src=\"" + swiperJson.data[i].img + "\">"
+                        + "<div class='msg'>"
+                        + "<p class='msg-title'>"
+                        + "<a class='title-color' href='' >" + swiperJson.data[i].title + "</a>"
+                        + "</p>"
+                        + "<div class='msg-line'></div>"
+                        + "<p class='msg-content'>"
+                        + "<a class='content-color'>" + swiperJson.data[i].des + "</a>"
+                        + "</p>"
+                        + "<div class='banner-btn'>"
+                        + "<a class='newA-top' href=\"\">"
+                        + "<span class='banner-btn-content'>了解更多</span>" + "<span class='banner-btn-img'></span>"
+                        + "</a>"
+                        + "</div>"
+                        + "</div>"
+                        +
+                        "</div>")
+                    console.log("程序段添加已执行");
+                }
+            }
+            // 进行初始化
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: true,
+                spaceBetween: 2,
+                pagination: {
+                    el: '.swiper-pagination',
+
+                    // dynamicBullets: true,
+
+                    type: 'custom',
+                    renderCustom: function (swiper, current, total = swiperJson.length) {
+                        var customPaginationHtml = '';
+                        for (var i = 0; i < total; i++) {
+                            if (i === (current - 1)) {
+                                customPaginationHtml += '<span class="swiper-pagination-customs swiper-pagination-customs-active"></span>';
+                                console.log("修改默认分页器激活样式");
+                            }
+                            else {
+                                customPaginationHtml += '<span class="swiper-pagination-customs"></span>';
+                                console.log("修改默认分页器样式");
+                            }
+                        }
+                        return customPaginationHtml;
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        </script>
+    </div>
+    <div class="mid">
+        <!--展示内容-->
+        <div class="item-titles">
+            <p class="item-titles-content">我们的产品</p>
+        </div>
+        <div class="items">
+            <div class="items-left"></div>   <!--内容由json获取-->
+            <div class="items-right"></div>  <!--内容由json获取-->
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>
+            var test = {
+                data: [
+                    {"title": "展商秀", "des": "为企业参展提供一个丰富有趣的互动邀请平台", "img": "image/img1.png"},
+                    {"title": "业务流程管理系统", "des": "BPM", "img": "image/BPM.png"},
+                    {"title": "观众数据管理中心系统", "des": "VDM", "img": "image/VDM.png"},
+                    {"title": "展位销售管理系统", "des": "BMM", "img": "image/BMM.png"},
+                    {"title": "社会化网站系统", "des": "SWS", "img": "image/SWS.png"},
+                    {"title": "微信增强开发平台", "des": "WeChat", "img": "image/WC.png"},
+                    {"title": "贸易配对服务系统", "des": "TMS", "img": "image/TMS.png"},
+                ]
+            }
+            // $(function () {
+            //     console.log(test.data[0].title);
+            //     $(".item-title").html(test.data[0].title);
+            // })
+
+            $(function () {
+                $(".items-left").append("<p class='item-left-title'>" + test.data[0].title + "</p>"
+                    + "<p class='item-left-msg'>" + test.data[0].des + "</p>"
+                    + "<div class='item-left-btn'>"
+                    + "<a class='newA-down' href=\"\">"
+                    + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
+                    + "</a>"
+                    + "</div>"
+                    + "<img class='item-left-img' src=\" " + test.data[0].img + "\">");
+            })
+            $(function () {
+                for (var i = 1; i < test.data.length; i++) {
+                    $(".items-right").append("<div class='item-right'>" +
+                        "<p class='item-right-title'>" + test.data[i].title + "</p>"
+                        + "<p class='item-right-msg'>" + test.data[i].des + "</p>"
+                        + "<div class='item-right-btn'>"
+                        + "<a class='newA-down' href=\"\">"
+                        + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
+                        + "</a>"
+                        + "</div>"
+                        + "<img class='item-right-img' src=\" " + test.data[i].img + "\">" +
+                        "</div>");
+                    console.log("添加div成功");
+                }
+            })
+
+
+        </script>
+    </div>
+    <div class="bottom">
+        <!--底部信息-->
+        <span class="footer">Copyright © 2017 i-rdesk.com All Rights Reserved.</span>
+        <a class="linker" href="">沪ICP备09006318号</a>
+    </div>
+</div>
+<!–[if lt IE 9]><script src=”http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js”></script><![endif]–>
+</body>
+</html>
