@@ -22,102 +22,45 @@ body {font: normal 100% Helvetica, Arial, sans-serif; font-size:0.875em;}
     width:100%;
     height: 100%;
 }
-
-.swiper-slide {
-    text-align: center;
-    font-size:1.125em;
-    background: #fff;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    width: 100%;
-}
-
 .top{
-    width:100%;
+    max-height:100%;
 }
 
 /*轮播图css*/
-.slide-image{}
-.msg{
-    width:100%;
-}
-.msg-title{
-    position:relative;
-    font-size:2.0625em;
-}
-.title-color, .content-color{
-    color: #ffffff;
-}
-.msg-line{
 
-    background: #ffffff;
-    border-radius: 2px;
-    position: relative;
-    top: -14%;
-}
-.msg-content{
-    font-size:0.875em;
-    position: relative;
-    top: -8%;
-}
-.banner-btn{
-    border: #ffffff solid 1px;
-    text-align:center;
-}
-.newA-top, .newA-down{
-    color:#fefefe;
-}
-.banner-btn-content{
-    margin:0 auto;
-}
-.btn-next, .btn-prev{
-    outline:none;
 
-}
-.btn-prev{
-    background: url("image/arrow-left.png");
-    float: left;
-}
-.btn-next{
-    background: url("image/arrow-right.png");
-    float: right;
-}
-.btn-pagination{}
+
+
+
 
 
 .mid{
     display: grid;
     grid-template-columns: 18.75% 62.5% 18.75%;
     grid-template-rows: 23.3% 53.2% 23.3%;
+    background: #f4f6f9;
 }
 .item-titles{
     grid-column: 2/3;
     grid-row: 1/2;
     text-align: center;
+    width: 100%;
+    height: 100%;
 }
 .item-titles-content{
+    font-size:2em;
     color: #333333;
     position: relative;
-    top: 43.4%;
+    top: 55.19%;
 }
 .items{
     grid-column: 2/3;
     grid-row: 2/3;
     display: grid;
-    grid-template-columns: 33.3% 66.6%;
+    grid-template-columns: 33.333% 66.666%;
     grid-gap: 1px;
     background: #ebebeb;
+    border:1px solid #ebebeb;
 }
 .items-left{
     background: #ffffff;
@@ -132,13 +75,27 @@ body {font: normal 100% Helvetica, Arial, sans-serif; font-size:0.875em;}
 .item-left-title, .item-right-title{
     color:#222222;
     position:relative;
+
 }
-.item-left-title{}
+
+.item-left-title{
+    float:left;
+    font-size:2.0625em;
+    position:relative;
+    top:6.6%;
+    left:7%;
+}
 .item-left-msg, .item-right-msg{
+    font-size:0.875em;
     color: #999999;
     position: relative;
 }
+.item-left-msg{
+    top:19.1%;
+    left:-15%;
+}
 .item-left-btn, .item-right-btn{
+    font-size:0.75em;
     outline:none;
     background: #1890ff;
     color: #fefefe;
@@ -147,45 +104,69 @@ body {font: normal 100% Helvetica, Arial, sans-serif; font-size:0.875em;}
     vertical-align: middle;
     position: relative;
 }
-.newA-down{}
-.btn-content{}
+.item-left-btn{
+    height: 5%;
+    width: 15.5%;
+    position: relative;
+    top: 32.3%;
+    left: 7%;
+}
+.newA-down{
+    position: relative;
+    top: -117%;
+}
+.btn-content{
+    position: relative;
+    top: 5%;
+    color:#ffffff;
+}
 .btn-img{}
 .item-left-img, .item-right-img{
     position: relative;
     display: block;
 }
 .item-left-img{
-    left: -16%;
-    top: 17%;
-    width: 37%;
-    height: auto;
     max-width: 100%;
     max-height: 100%;
     float: right;
+    position: relative;
+    top: 24%;
+    left: -23%;
 }
 .items-right{
     left: 69%;
     top: 12%;
-}
-.item-right{
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
     grid-template-rows: 50% 50%;
     grid-gap: 1px;
     background: #ebebeb;
 }
-.item-right{}
+.item-right{
+    background: #ffffff;
+}
+.item-right{
+    
+}
 .item-right-title{
+    font-size:1.25em;
     left: 7.4%;
     top: 19%;
 }
 .item-right-msg{
     left: 7.4%;
-    top: 22%;
+    top: 25%;
 }
-.item-right-btn{}
+.item-right-btn{
+    left: 7%;
+    top: 57%;
+    width: 23%;
+}
 .newA-down{}
-.item-right-img{}
+.item-right-img{
+    left: 62%;
+    top: 26%;
+}
 
 
 .bottom{
@@ -196,5 +177,14 @@ body {font: normal 100% Helvetica, Arial, sans-serif; font-size:0.875em;}
     background: #161616;
 
 }
-.footer{}
-.linker{}
+.footer{
+    display: inline-block;
+    position: relative;
+    top: 25%;
+}
+.linker{
+    color: #969696;
+    display: inline-block;
+    position: relative;
+    top: 25%;
+}

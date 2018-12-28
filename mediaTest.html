@@ -11,16 +11,20 @@
 <body>
 <div class="wraper">
     <div class="top">
-        <!--轮播图-->
+        <!-- Swiper -->
         <div class="swiper-container">
-            <div class="swiper-wrapper"></div>  <!--内容由json获取-->
+            <div class="swiper-wrapper">
+            </div>
         </div>
-        <div class="swiper-button-next btn-next"></div>  <!--前进按钮-->
-        <div class="swiper-button-prev btn-prev"></div>  <!--后退按钮-->
-        <div class="swiper-pagination btn-pagination"></div>            <!--分页器-->
-
+        <!-- Add Pagination -->
+        <div class="swiper-pagination pagination-rebuild"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next btn-next"></div>
+        <div class="swiper-button-prev btn-prev"></div>
+        <!-- Swiper JS -->
         <script src="dist/js/swiper.min.js"></script>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <!-- Initialize Swiper -->
         <script>
             var swiperJson = {
                 data: [
@@ -30,7 +34,7 @@
                         "img": "image/show1.png"
                     },
                     {
-                        "title": "EBI 展会商业只能",
+                        "title": "EBI 展会商业智能",
                         "des": "为您提供专业化、个性化的智慧会展管理整体解决方案，推进智慧会展生态系统建设，应对会展业未来发展变化",
                         "img": "image/show2.png"
                     },
@@ -41,11 +45,11 @@
             // 添加轮播代码段
             function lunbo() {
                 for (var i = 0; i < swiperJson.data.length; i++) {
-                    $(".swiper-wrapper").append("<div class='swiper-slide '>"
+                    $(".swiper-wrapper").append("<div class='swiper-slide'>"
                         + "<img class='slide-image' src=\"" + swiperJson.data[i].img + "\">"
                         + "<div class='msg'>"
                         + "<p class='msg-title'>"
-                        + "<a class='title-color' href='' >" + swiperJson.data[i].title + "</a>"
+                        + "<a class='title-color'href='' >" + swiperJson.data[i].title + "</a>"
                         + "</p>"
                         + "<div class='msg-line'></div>"
                         + "<p class='msg-content'>"
@@ -62,27 +66,23 @@
                     console.log("程序段添加已执行");
                 }
             }
-            // 进行初始化
+            // 进行渲染
             var swiper = new Swiper('.swiper-container', {
                 loop: true,
                 autoplay: true,
                 spaceBetween: 2,
                 pagination: {
                     el: '.swiper-pagination',
-
                     // dynamicBullets: true,
-
                     type: 'custom',
                     renderCustom: function (swiper, current, total = swiperJson.length) {
                         var customPaginationHtml = '';
                         for (var i = 0; i < total; i++) {
                             if (i === (current - 1)) {
                                 customPaginationHtml += '<span class="swiper-pagination-customs swiper-pagination-customs-active"></span>';
-                                console.log("修改默认分页器激活样式");
                             }
                             else {
                                 customPaginationHtml += '<span class="swiper-pagination-customs"></span>';
-                                console.log("修改默认分页器样式");
                             }
                         }
                         return customPaginationHtml;
