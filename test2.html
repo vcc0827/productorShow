@@ -30,7 +30,9 @@
         a {
             text-decoration: none;
         }
-
+        .swiper-slide{
+            width: auto!important;
+        }
 
         .pagination-rebuild {
 
@@ -404,6 +406,7 @@
             }
             // 进行渲染
             var mySwiper = new Swiper('.swiper-container', {
+                slidesPerView: "auto",
                 grabCursor:true,
                 loop: true,
                 autoplay: true,
