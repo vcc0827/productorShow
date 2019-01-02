@@ -31,6 +31,7 @@
             text-decoration: none;
         }
 
+
         .pagination-rebuild {
 
         }
@@ -171,12 +172,11 @@
             top:-5%;
         }
         .swiper-pagination-customs {
-            width: 4px;
-            height: 4px;
+            width: 10px;
+            height: 10px;
             display: inline-block;
-            background: #afafaf;
-            opacity: .3;
-            margin: 0 5px;
+            background:url("image/dot1.png");
+            margin: 0 2px;
             cursor: pointer;
             border-radius: 100%;
             bottom: 1px;
@@ -188,7 +188,7 @@
             height: 10px;
             opacity: 1;
             border-radius: 100%;
-            background-color: #ffffff;
+            background:url("image/dot2.png");
         }
 
         /*自定义前进后退按钮样式*/
@@ -255,6 +255,7 @@
         .item-title-left, .item-title-right {
             color: #222222;
             position: relative;
+            display:block;
         }
 
         .item-title-left {
@@ -273,6 +274,7 @@
             font-size: 14px;
             color: #999999;
             position: relative;
+            display:block;
         }
 
         .item-msg-left {
@@ -298,6 +300,9 @@
             position: relative;
         }
 
+        .item-btn-left:hover, .item-btn-right:hover{
+            box-shadow: 3px 3px 5px #1d7db1;
+        }
         .item-btn-left {
             left: 7.4%;
             top: 19.4%;
@@ -329,6 +334,12 @@
             top: 12%;
         }
 
+
+        @media all and (min-width:1200px){}
+
+        @media all and (min-width: 960px) and (max-width: 1199px) {}
+
+        @media all and (min-width: 768px) and (max-width: 959px) {}
 
     </style>
 </head>
@@ -374,7 +385,7 @@
                         + "<img class='slide-image' src=\"" + swiperJson.data[i].img + "\">"
                         + "<div class='msg'>"
                         + "<p class='msg-title'>"
-                        + "<a class='title-color'href='' >" + swiperJson.data[i].title + "</a>"
+                        + "<a class='title-color' href='' >" + swiperJson.data[i].title + "</a>"
                         + "</p>"
                         + "<div class='msg-line'></div>"
                         + "<p class='msg-content'>"
@@ -388,30 +399,28 @@
                         + "</div>"
                         +
                         "</div>")
-                    console.log("程序段添加已执行");
+                    console.log("添加轮播图内容已执行");
                 }
             }
             // 进行渲染
-            var swiper = new Swiper('.swiper-container', {
+            var mySwiper = new Swiper('.swiper-container', {
+                grabCursor:true,
                 loop: true,
                 autoplay: true,
                 spaceBetween: 2,
+                clickable:true,
                 pagination: {
-                    el: '.swiper-pagination',
-
-                    // dynamicBullets: true,
-
                     type: 'custom',
+                    el: '.swiper-pagination',
+                    // dynamicBullets: true,
                     renderCustom: function (swiper, current, total = swiperJson.length) {
                         var customPaginationHtml = '';
                         for (var i = 0; i < total; i++) {
                             if (i === (current - 1)) {
-                                customPaginationHtml += '<span class="swiper-pagination-customs swiper-pagination-customs-active"></span>';
-                                console.log("修改默认分页器激活样式");
+                                customPaginationHtml += '<li id="btn1" class="swiper-pagination-customs swiper-pagination-customs-active"></li>';
                             }
                             else {
-                                customPaginationHtml += '<span class="swiper-pagination-customs"></span>';
-                                console.log("修改默认分页器样式");
+                                customPaginationHtml += '<li id="btn2" class="swiper-pagination-customs"></li>';
                             }
                         }
                         return customPaginationHtml;
@@ -422,6 +431,12 @@
                     prevEl: '.swiper-button-prev',
                 },
             });
+            $('#btn1').on('click','li',function () {
+                var index = this.innerHTML;
+                mySwiper.slideTo(index+1, 500, false);//切换到第一个slide，速度为1秒
+                console.log(index+1);
+            })
+
         </script>
     </div>
     <div class="item2">
@@ -455,8 +470,8 @@
             // })
 
             $(function () {
-                $(".item2-1").append("<p class='item-title-left'>" + test.data[0].title + "</p>"
-                    + "<p class='item-msg-left'>" + test.data[0].des + "</p>"
+                $(".item2-1").append("<a class='item-title-left' href=\"\">" + test.data[0].title + "</a>"
+                    + "<a class='item-msg-left' href=\"\">" + test.data[0].des + "</a>"
                     + "<div class='item-btn-left'>"
                     + "<a class='newA-down' href=\"\">"
                     + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
@@ -467,8 +482,8 @@
             $(function () {
                 for (var i = 1; i < test.data.length; i++) {
                     $(".item2-2").append("<div class='item-right'>" +
-                        "<p class='item-title-right'>" + test.data[i].title + "</p>"
-                        + "<p class='item-msg-right'>" + test.data[i].des + "</p>"
+                        "<a class='item-title-right' href=\"\">" + test.data[i].title + "</a>"
+                        + "<a class='item-msg-right' href=\"\">" + test.data[i].des + "</a>"
                         + "<div class='item-btn-right'>"
                         + "<a class='newA-down' href=\"\">"
                         + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
@@ -479,8 +494,6 @@
                     console.log("添加div成功");
                 }
             })
-
-
         </script>
     </div>
     <div class="item3">

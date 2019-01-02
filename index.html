@@ -1,85 +1,357 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Bootstrap 实例 - 轮播（Carousel）插件方法</title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+
+    <meta name="Keywords" content="会展人,联展软件,上海联展,联展,i-rdesk,智慧会展,会展软件,互动营销" />
+    <meta name="Description" content="上海联展软件技术有限公司是会展互联网、信息化及营销解决方案的领先服务商，正在为中国近50个行业1000场展会提供招展、招商专业解决方案。成立于2004年，总部位于上海，在长沙、广州等设有分支或代理机构。" />
+
+    <meta name="author" content="上海联展软件技术有限公司|huizhanren" />
+    <title>会展人,联展软件,上海联展,联展,i-rdesk,智慧会展,会展软件,互动营销,上海联展软件技术有限公司</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+    <!-- <script src="./libs/require.2.3.4.min.js" data-main="./js/index"></script> -->
+    <link href="/libs/bootstrap/dist/css/bootstrap.css?v=1218a" rel="stylesheet" />
+    <link href="/libs/swiper/css/idangerous.swiper.css" rel="stylesheet" />
+    <link href="/libs/aos/aos.css" rel="stylesheet" />
+    <link href="/Content/css/main.css?v=1023" rel="stylesheet" />
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?4e5df56520d37dd9056d64153d00e282";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
-
-<div id="myCarousel" class="carousel slide">
-    <!-- 轮播（Carousel）指标 -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- 轮播（Carousel）项目 -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <img src="image/1.jpg" alt="First slide">
+<!-- 顶部导航 -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/content/img/base/logo.png?v=1024" alt="会展人 | 展商秀"  height="33"></a>
         </div>
-        <div class="item">
-            <img src="image/2.jpg" alt="Second slide">
+        <!-- 导航链接 -->
+        <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
+            <ul class="nav navbar-nav navbar-right">
+                <li id="exshow"><a href="http://www.zhanshangxiu.com" target="_blank">展商秀</a></li>
+                <li id="software"><a href="/Software">软件</a></li>
+                <li id="news"><a href="/News">资讯</a></li>
+                <li id="activity"><a href="/Activity">活动</a></li>
+                <li id="community"><a href="/Community">社区</a></li>
+            </ul>
         </div>
-        <div class="item">
-            <img src="image/3.jpg" alt="Third slide">
+        <!--/.navbar-collapse -->
+    </div>
+</nav>
+
+
+
+<!-- 轮播 -->
+<section class="my-carousel">
+    <div class="apple-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+
+                <!-- 新增banner -->
+                <div class="swiper-slide slide2 z-2">
+                    <div class="swiper-box">
+                        <img src="/content/img/bg-slide3-2.png" class="bg bg-2">
+                        <img src="/content/img/base/web/bg-line2.png" class="slide-line">
+                        <div class="txtbox">
+                            <img src="/content/img/bg-slide3-1.png" class="bg1 z-2">
+                            <h2 class="txt"><a href="/software/ebi">了解详情 &gt;&gt; </a></h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <ul class="pagination autoplay">
+                <li><span><i></i></span></li>
+
+            </ul>
         </div>
     </div>
-    <!-- 轮播（Carousel）导航 -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+
+</section>
+
+<!-- 提供服务 -->
+<section class="pro-item">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" id="i_i_rdesk" data-val-url="/IRDESK">
+                <div class="item">
+                    <h5>i-rdesk 3</h5>
+                    <p>云展台</p>
+                    <img src="/content/img/base/base-desk.png" class="img-responsive center-block">
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="i_software" data-val-url="/Software">
+                <div class="item">
+                    <h5>软件</h5>
+                    <p>管理你的数据</p>
+                    <img src="/content/img/base/base-software.png" class="img-responsive center-block">
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="yingxiao" data-val-url="/Marketing">
+                <div class="item">
+                    <h5>互动营销</h5>
+                    <p>让展会嗨起来</p>
+                    <img src="/content/img/base/base-earth.png" class="img-responsive center-block">
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" id="i_huodong" data-val-url="/Activity">
+                <div class="item">
+                    <h5>活动</h5>
+                    <p>聚焦会展人</p>
+                    <img src="/content/img/base/base-activity.png" class="img-responsive center-block">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 介绍 -->
+<section class="introduce">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 info">
+                <h1>上海联展软件技术有限公司</h1>
+                <span>上海联展软件技术有限公司是会展互联网、信息化及营销解决方案的领先服务商。成立于2004年，总部位于上海，在长沙、广州等设有分支或代理机构。<br>联展正在为中国近50个行业1000场展会提供招展、招商专业解决方案。参与《会展信息化管理》高等院校教材编写，是中国贸易报《会展大咖秀》、《海峡会展》的专栏供稿人。</span>
+                <a href="/AboutUs" class="btn-more">了解更多</a>
+                <em>联展软件已被授权为i-rdesk总经销商<a href="http://www.i-rdesk.com">i-rdesk详情>></a></em>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <img src="/content/img/base/bg-info.jpg" class="img-responsive center-block">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 合作商 -->
+<section class="own-partner">
+    <div class="container">
+        <div class="row">
+            <h2>典型用户</h2>
+            <p>如果你不确定，那么最好的方式就是跟他们一样 </p>
+            <div ng-app="AppCustomer" ng-controller="CustomerController" class="partner-item clearfix">
+                <div class="col-md-5ths item col-sm-3" ng-repeat="x in List">
+                    <div class="img-box">
+                        <img src="{{x.Logo}}" alt="{{x.Name}}" title="{{x.Name}}">
+                    </div>
+                    <p>{{x.Name}}</p>
+                </div>
+            </div>
+            <a class="btn-more" href="/Customer">查看更多</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-xs-4 item">
+                <h3>智慧展台</h3>
+                <ul>
+                    <li><a href="/IRDESK/#">i-rdesk</a></li>
+                    <li><a href="/IRDESK/#">产品参数</a></li>
+                    <li><a href="/IRDESK/#">主要功能</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-4 item">
+                <h3>软件</h3>
+                <ul>
+                    <li><a href="/Software/#BPM">业务流程管理系统</a></li>
+                    <li><a href="/Software/#VDM">观众数据管理中心系统</a></li>
+                    <li><a href="/Software/#BMM">展位销售管理系统</a></li>
+                    <li><a href="/Software/#DMC">行业级中央数据库</a></li>
+                    <li><a href="/Software/#STS">活动营销效果监控系统</a></li>
+                    <li><a href="/Software/#TMS">贸易配对服务系统</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-4 item">
+                <h3>互动营销</h3>
+                <ul>
+                    <li><a href="/Marketing/#case">会展人摄影展</a></li>
+                    <li><a href="/Marketing/#case">会展人红包节</a></li>
+                    <li><a href="/Marketing/#case">会展人点亮中国</a></li>
+                    <li><a href="/Marketing/#case">会展人脸谱</a></li>
+                    <li><a href="/Marketing/#case">会展涛客</a></li>
+                    <li><a href="/Marketing/#case">会展人微广播</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-4 item">
+                <h3>活动</h3>
+                <ul>
+                    <li><a href="/Activity/#huizhanren">会展人大会</a></li>
+                    <li><a href="/Activity/#salon">会展人沙龙</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-4 item">
+                <h3>关于</h3>
+                <ul>
+                    <li><a href="/AboutUs/Index/#navTab">了解联展</a></li>
+                    <li><a href="/AboutUs/History/#navTab">发展历程</a></li>
+                    <li><a href="/AboutUs/Recruit/#navTab">招贤纳士</a></li>
+                    <li><a href="/AboutUs/Article/#navTab">文章观点</a></li>
+                    <li><a href="/AboutUs/Contact/#navTab">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-4 item item2">
+                <img src="/content/img/base/logo2.png" alt="会展人" title="会展人" class="logo">
+                <ul>
+                    <li>上海联展软件技术有限公司</li>
+                    <li>021-6053 0405</li>
+                    <li><img src="/content/img/base/code.png" alt="二维码"></li>
+                    <li>关注官方微信</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="ft-copyright">Copyright &copy; 2019 huizhanren.com All Rights Reserved. <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备09006318号-10</a><img src="/content/img/copyright.png"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402004077" target="_blank">沪公网安备:31011402004077</a></div>
+</footer>
+<!-- 悬浮层 -->
+<div id="fixbar">
+    <a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1945136486&amp;site=qq&amp;menu=yes">
+        <div><i class="icon-qq"></i><span class="text">在线咨询</span></div>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+    <a class="phone">
+        <div><i class="icon-phone"></i><span class="text">021-6053 0405</span></div>
+    </a>
+    <a data-toggle="modal" data-target="#myModal" class="msg">
+        <div><i class="icon-msg"></i><span class="text">留言咨询</span></div>
+    </a>
+    <a class="top">
+        <div><i class="icon-top"></i><span class="text">返回顶部</span></div>
     </a>
 </div>
-
-<!-- 控制按钮 -->
-
-<div style="text-align:center;">
-    <input type="button" class="btn start-slide" value="Start">
-    <input type="button" class="btn pause-slide" value="Pause">
-    <input type="button" class="btn prev-slide" value="Previous Slide">
-    <input type="button" class="btn next-slide" value="Next Slide">
-    <input type="button" class="btn slide-one" value="Slide 1">
-    <input type="button" class="btn slide-two" value="Slide 2">
-    <input type="button" class="btn slide-three" value="Slide 3">
+<!-- Modal/留言咨询弹出层 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content layer-box">
+            <i class="icon-close" data-dismiss="modal" aria-label="Close"></i>
+            <form action="/api/ALeaveMsg" data-ajax="true" data-ajax-failure="Failed" data-ajax-method="post" data-ajax-success="Success" id="form0" method="post">                    <input type="hidden" name="TypeId" value="3" />
+                <div class="form-group">
+                    <input type="text" class="form-control" maxlength="50" data-val="true" data-val-required="请输入姓名" placeholder="您的姓名" name="Name">
+                    <span data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" maxlength="11" data-val="true" data-val-required="请输入手机" data-val-regex="格式不正确" data-val-regex-pattern="1[3-9][0-9]{9}" placeholder="您的手机" name="Mob">
+                    <span data-valmsg-for="Mob" data-valmsg-replace="true"></span>
+                </div>
+                <textarea class="form-control" rows="3" data-val="true" data-val-required="请输入留言内容" placeholder="请在此输入留言内容，我们会尽快与您联系。" name="Remark" data-val-length-max="500" data-val-length-min="6" data-val-length="6~500字"></textarea>
+                <span data-valmsg-for="Remark" data-valmsg-replace="true"></span>
+                <button type="submit" class="btn btn-default">留言咨询</button>
+            </form>            </div>
+    </div>
 </div>
+
+
+<script src="https://cdn.bootcss.com/angular.js/1.6.5/angular.min.js" type="text/javascript"></script>
 <script>
-    $(function(){
-        // 初始化轮播
-        $(".start-slide").click(function(){
-            $("#myCarousel").carousel('cycle');
-        });
-        // 停止轮播
-        $(".pause-slide").click(function(){
-            $("#myCarousel").carousel('pause');
-        });
-        // 循环轮播到上一个项目
-        $(".prev-slide").click(function(){
-            $("#myCarousel").carousel('prev');
-        });
-        // 循环轮播到下一个项目
-        $(".next-slide").click(function(){
-            $("#myCarousel").carousel('next');
-        });
-        // 循环轮播到某个特定的帧
-        $(".slide-one").click(function(){
-            $("#myCarousel").carousel(0);
-        });
-        $(".slide-two").click(function(){
-            $("#myCarousel").carousel(1);
-        });
-        $(".slide-three").click(function(){
-            $("#myCarousel").carousel(2);
+    var app = angular.module('AppCustomer', []);
+
+    app.controller('CustomerController', function ($scope, $http)
+    {
+        $http.get("/api/Acustomer", { params: { take: 10 } }).then(function (result)
+        {
+            $scope.List = result.data.Data;
+
         });
     });
+
 </script>
+
+<script src="/Scripts/jquery-1.10.2.js"></script>
+<script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="/Content/js/index.js"></script>
+<script src="/libs/jquery.placeholder.min.js"></script>
+
+<script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="/Scripts/jquery.validate.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<script src="/libs/bootstrap.min.js"></script>
+<script src="/Scripts/respond.js"></script>
+
+<script src="/libs/swiper/idangerous.swiper.min.js"></script>
+<script src="/libs/swiper/idangerous.swiper.progress.min.js"></script>
+
+<script src="/libs/layer/layer.js"></script>
+
+
+<script src="/libs/swiper/apple.js"></script>
+
+<script>
+    $(function ()
+    {
+        $(".pro-item .container-fluid .row .col-md-3").click(function ()
+        {
+            if ($(this).attr("data-val-url"))
+            {
+                window.location.href = $(this).attr("data-val-url");
+            }
+        });
+    })
+</script>
+
+<script src="/libs/aos/aos.js"></script>
+<script type="text/javascript">
+    AOS.init({
+        easing: 'ease-out-back',
+        duration: 800
+    });
+    $(function ()
+    {
+        $('input,textarea').placeholder();
+        $("#fixbar .top").click(function ()
+        {
+            $('body,html').animate({ scrollTop: 0 }, 600);
+            return false;
+        });
+    });
+    function Success(data)
+    {
+        if (data.StatusCode == 1)
+        {
+            $('#myModal').modal('hide');
+            $(".form-group input.form-control,textarea.form-control ").val("");
+            layer.msg("感谢您的支持，我们将尽快与您确定联系！");
+        }
+        else
+        {
+            layer.alert("感谢您的支持，但留言提交失败，请重试...")
+        }
+    }
+    function Failed(data)
+    {
+        layer.alert("感谢您的支持，但留言提交失败，请重试...")
+    }
+</script>
+<div style="display:none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260455873&web_id=1260455873" language="JavaScript"></script></div>
+
 </body>
 </html>
