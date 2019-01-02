@@ -417,10 +417,10 @@
                         var customPaginationHtml = '';
                         for (var i = 0; i < total; i++) {
                             if (i === (current - 1)) {
-                                customPaginationHtml += '<li id="btn1" class="swiper-pagination-customs swiper-pagination-customs-active"></li>';
+                                customPaginationHtml += '<li id="btn1" class="swiper-pagination-customs btn1 swiper-pagination-customs-active"></li>';
                             }
                             else {
-                                customPaginationHtml += '<li id="btn2" class="swiper-pagination-customs"></li>';
+                                customPaginationHtml += '<li  class="swiper-pagination-customs btn2"></li>';
                             }
                         }
                         return customPaginationHtml;
@@ -431,12 +431,11 @@
                     prevEl: '.swiper-button-prev',
                 },
             });
-            $('#btn1').on('click','li',function () {
-                var index = this.innerHTML;
-                mySwiper.slideTo(index+1, 500, false);//切换到第一个slide，速度为1秒
-                console.log(index+1);
-            })
-
+            $('.swiper-pagination').on('click', 'li', function () {
+                var index = $(this).index()+2;
+                mySwiper.slideTo(index - 1, 500, false);//切换到第1个slide，速度为1秒
+                console.log((index - 1) + "生效");
+            });
         </script>
     </div>
     <div class="item2">
