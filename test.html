@@ -3,116 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="dist/css/normalize.css"/>
-    <link rel="stylesheet" type="text/css" href="dist/css/htmleaf-demo.css">
-    <link rel="stylesheet" href="dist/css/pageSwitch.min.css">
-    <style type="text/css">
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        html, body {
-            height: 100%;
-        }
-
-        #container {
-            width: 100%;
-            height: 500px;
-            overflow: hidden;
-        }
-
-        .sections, .section {
-            height: 100%;
-        }
-
-        #container, .sections {
-            position: relative;
-        }
-
-        .section {
-            background-color: #000;
-            background-size: cover;
-            background-position: 50% 50%;
-            text-align: center;
-            color: white;
-        }
-
-        #section1 {
-            background-image: url('image/show1.png');
-        }
-
-        #section2 {
-            background-image: url('image/show2.png');
-        }
-    </style>
-
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="dist/css/swiper.min.css">
 </head>
 <body>
-<div class="htmleaf-container">
-    <div id="container">
-        <div class="sections">
-            <div class="section"><h3>this is the page1</h3></div>
-            <div class="section"><h3>this is the page2</h3></div>
+<div class="wraper">
+    <div class="item1">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper"></div>
         </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next btn-next"></div>
+        <div class="swiper-button-prev btn-prev"></div>
+        <!-- Swiper JS -->
+        <script src="dist/js/swiper.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <!-- Initialize Swiper -->
+        <script>
+            var swiperJson = {
+                data: [
+                    {
+                        "title": "展商秀", "des": "主办方通过展商秀平台发起的展会营销活动，通过展商邀请观众，增加展会的关注度，实现展会宣传目的，\n" +
+                            "                                    在现场同步线下活动，实现线上线下互动，调动展会现场氛围...",
+                        "img": "image/show1.png"
+                    },
+                    {
+                        "title": "EBI 展会商业智能",
+                        "des": "为您提供专业化、个性化的智慧会展管理整体解决方案，推进智慧会展生态系统建设，应对会展业未来发展变化",
+                        "img": "image/show2.png"
+                    },
+                ]
+            };
+            console.log(swiperJson.data);
+            lunbo();
+            // 添加轮播代码段
+            function lunbo() {
+                for (var i = 0; i < swiperJson.data.length; i++) {
+                    $(".swiper-wrapper").append("<div class='swiper-slide'>"
+                        + "<img class='slide-image' src=\"" + swiperJson.data[i].img + "\">"
+                        + "<div class='msg'>"
+                        + "<p class='msg-title'>"
+                        + "<a class='title-color' href='' >" + swiperJson.data[i].title + "</a>"
+                        + "</p>"
+                        + "<div class='msg-line'></div>"
+                        + "<p class='msg-content'>"
+                        + "<a class='content-color'>" + swiperJson.data[i].des + "</a>"
+                        + "</p>"
+                        + "<div class='banner-btn'>"
+                        + "<a class='newA-top' href=\"\">"
+                        + "<span class='banner-btn-content'>了解更多</span>" + "<span class='banner-btn-img'></span>"
+                        + "</a>"
+                        + "</div>"
+                        + "</div>"
+                        +
+                        "</div>")
+                    console.log("添加轮播图内容已执行");
+                }
+            }
+            // 进行渲染
+            var mySwiper = new Swiper('.swiper-container', {
+                slidesPerView: "auto",
+                loop: true,
+                autoplay: true,
+                spaceBetween: 2,
+                clickable:true,
+                pagination: {
+                    type: 'custom',
+                    el: '.swiper-pagination',
+                    // dynamicBullets: true,
+                    renderCustom: function (swiper, current, total = swiperJson.length) {
+                        var customPaginationHtml = '';
+                        for (var i = 0; i < total; i++) {
+                            if (i === (current - 1)) {
+                                customPaginationHtml += '<li id="btn1" class="swiper-pagination-customs btn1 swiper-pagination-customs-active"></li>';
+                            }
+                            else {
+                                customPaginationHtml += '<li  class="swiper-pagination-customs btn2"></li>';
+                            }
+                        }
+                        return customPaginationHtml;
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+            $('.swiper-pagination').on('click', 'li', function () {
+                var index = $(this).index()+1;
+                mySwiper.slideTo(index - 1, 500, false);//切换到第1个slide，速度为1秒
+                console.log((index - 1) + "生效");
+            });
+        </script>
+    </div>
+    <div class="item2">
+        <div class="item-titles">
+            <p class="item-title-content">我们的产品</p>
+        </div>
+        <div class="items">
+            <div class="item2-1"></div>
+            <div class="item2-2"></div>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>
+            var test = {
+                data: [
+                    {"title": "展商秀", "des": "为企业参展提供一个丰富有趣的互动邀请平台", "img": "image/img1.png"},
+                    {"title": "业务流程管理系统", "des": "BPM", "img": "image/BPM.png"},
+                    {"title": "观众数据管理中心系统", "des": "VDM", "img": "image/VDM.png"},
+                    {"title": "展位销售管理系统", "des": "BMM", "img": "image/BMM.png"},
+                    {"title": "社会化网站系统", "des": "SWS", "img": "image/SWS.png"},
+                    {"title": "微信增强开发平台", "des": "WeChat", "img": "image/WC.png"},
+                    {"title": "贸易配对服务系统", "des": "TMS", "img": "image/TMS.png"},
+                ]
+            }
+            // $(function () {
+            //     console.log(test.data[0].title);
+            //     $(".item-title").html(test.data[0].title);
+            // })
+
+            $(function () {
+                $(".item2-1").append("<a class='item-title-left' href=\"\">" + test.data[0].title + "</a>"
+                    + "<a class='item-msg-left' href=\"\">" + test.data[0].des + "</a>"
+                    + "<div class='item-btn-left'>"
+                    + "<a class='newA-down' href=\"\">"
+                    + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
+                    + "</a>"
+                    + "</div>"
+                    + "<img class='item-img-left' src=\" " + test.data[0].img + "\">");
+            })
+            $(function () {
+                for (var i = 1; i < test.data.length; i++) {
+                    $(".item2-2").append("<div class='item-right'>" +
+                        "<a class='item-title-right' href=\"\">" + test.data[i].title + "</a>"
+                        + "<a class='item-msg-right' href=\"\">" + test.data[i].des + "</a>"
+                        + "<div class='item-btn-right'>"
+                        + "<a class='newA-down' href=\"\">"
+                        + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
+                        + "</a>"
+                        + "</div>"
+                        + "<img class='item-img-right' src=\" " + test.data[i].img + "\">" +
+                        "</div>");
+                    console.log("添加div成功");
+                }
+            })
+        </script>
+    </div>
+    <div class="item3">
+        <span class="footer">Copyright © 2017 i-rdesk.com All Rights Reserved.</span>
+        <a class="linker" href="">沪ICP备09006318号</a>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script>
-    var BannerJson = {
-        data: [
-            {
-                "title": "展商秀", "des": "主办方通过展商秀平台发起的展会营销活动，通过展商邀请观众，增加展会的关注度，实现展会宣传目的，\n" +
-                    "                                    在现场同步线下活动，实现线上线下互动，调动展会现场氛围...",
-                "img": "image/show1.png"
-            },
-            {
-                "title": "EBI 展会商业只能",
-                "des": "为您提供专业化、个性化的智慧会展管理整体解决方案，推进智慧会展生态系统建设，应对会展业未来发展变化",
-                "img": "image/show2.png"
-            },
-        ]
-    };
-    console.log(BannerJson.data);
-
-    function Banner() {
-        for (var i = 0; i < BannerJson.data.length; i++) {
-
-            $("#container").append("<div class='sections'>"
-                + "<img class='slide-image' src=\"" + BannerJson.data[i].img + "\">"
-                + "<div class='msg'>"
-                + "<p class='msg-title'>"
-                + "<a class='title-color'href='' >" + BannerJson.data[i].title + "</a>"
-                + "</p>"
-                + "<div class='msg-line'></div>"
-                + "<p class='msg-content'>"
-                + "<a class='content-color'>" + BannerJson.data[i].des + "</a>"
-                + "</p>"
-                + "<div class='banner-btn'>"
-                + "<a class='newA-top' href=\"\">"
-                + "<span class='banner-btn-content'>了解更多</span>" + "<span class='banner-btn-img'></span>"
-                + "</a>"
-                + "</div>"
-                + "</div>"
-                + "</div>");
-            console.log("生成div");
-        }
-    }
-
-    Banner();
-</script>
-
-<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
-<script>window.jQuery || document.write('<script src="dist/js/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="dist/js/pageSwitch.min.js"></script>
-<script>
-    $("#container").PageSwitch({
-        direction: 'horizontal',
-        easing: 'ease-in',
-        duration: 1000,
-        autoPlay: true,
-        loop: 'false'
-    });
-</script>
 </body>
 </html>

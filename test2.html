@@ -34,18 +34,12 @@
             width: auto!important;
         }
 
-        .pagination-rebuild {
-
-        }
         .newA-top,.newA-down{
             color: #fefefe;
         }
         .newA-top{
             position: relative;
             top: 19%;
-        }
-        .newA-down{
-
         }
 
         .wraper {
@@ -333,8 +327,7 @@
             display: block;
             left: 69%;
             top: 12%;
-            max-width: 100%;
-            max-height: 100%;
+
         }
 
 
@@ -351,9 +344,7 @@
     <div class="item1">
         <!-- Swiper -->
         <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-            </div>
+            <div class="swiper-wrapper"></div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination pagination-rebuild"></div>
@@ -436,7 +427,7 @@
                 },
             });
             $('.swiper-pagination').on('click', 'li', function () {
-                var index = $(this).index()+2;
+                var index = $(this).index()+1;
                 mySwiper.slideTo(index - 1, 500, false);//切换到第1个slide，速度为1秒
                 console.log((index - 1) + "生效");
             });
@@ -444,12 +435,8 @@
     </div>
     <div class="item2">
         <div class="items">
-            <div class="item2-1">
-
-            </div>
-            <div class="item2-2">
-
-            </div>
+            <div class="item2-1"></div>
+            <div class="item2-2"></div>
         </div>
         <div class="item-titles">
             <p class="item-title-content">我们的产品</p>
