@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="test.css">
     <link rel="stylesheet" href="dist/css/swiper.min.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
 <div class="wraper">
@@ -14,10 +14,10 @@
             <div class="swiper-wrapper"></div>
         </div>
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination z2"></div>
         <!-- Add Arrows -->
-        <div class="swiper-button-next btn-next"></div>
-        <div class="swiper-button-prev btn-prev"></div>
+        <div class="swiper-button-next btn-next z2"></div>
+        <div class="swiper-button-prev btn-prev z2"></div>
         <!-- Swiper JS -->
         <script src="dist/js/swiper.min.js"></script>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -39,6 +39,7 @@
             };
             console.log(swiperJson.data);
             lunbo();
+
             // 添加轮播代码段
             function lunbo() {
                 for (var i = 0; i < swiperJson.data.length; i++) {
@@ -54,7 +55,8 @@
                         + "</p>"
                         + "<div class='banner-btn'>"
                         + "<a class='newA-top' href=\"\">"
-                        + "<span class='banner-btn-content'>了解更多</span>" + "<span class='banner-btn-img'></span>"
+                        + "<span class='banner-btn-content'>了解更多</span>"
+                        +"<span></span>"
                         + "</a>"
                         + "</div>"
                         + "</div>"
@@ -63,13 +65,14 @@
                     console.log("添加轮播图内容已执行");
                 }
             }
+
             // 进行渲染
             var mySwiper = new Swiper('.swiper-container', {
                 slidesPerView: "auto",
                 loop: true,
                 autoplay: true,
                 spaceBetween: 2,
-                clickable:true,
+                clickable: true,
                 pagination: {
                     type: 'custom',
                     el: '.swiper-pagination',
@@ -93,7 +96,7 @@
                 },
             });
             $('.swiper-pagination').on('click', 'li', function () {
-                var index = $(this).index()+1;
+                var index = $(this).index() + 1;
                 mySwiper.slideTo(index - 1, 500, false);//切换到第1个slide，速度为1秒
                 console.log((index - 1) + "生效");
             });
@@ -104,8 +107,13 @@
             <p class="item-title-content">我们的产品</p>
         </div>
         <div class="items">
-            <div class="item2-1"></div>
-            <div class="item2-2"></div>
+            <div class="item-contents">
+                <div class="item2-1"></div>
+                <div class="item2-2">
+                    <div class="row1"></div>
+                    <div class="row2"></div>
+                </div>
+            </div>
         </div>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
@@ -120,34 +128,46 @@
                     {"title": "贸易配对服务系统", "des": "TMS", "img": "image/TMS.png"},
                 ]
             }
-            // $(function () {
-            //     console.log(test.data[0].title);
-            //     $(".item-title").html(test.data[0].title);
-            // })
-
             $(function () {
                 $(".item2-1").append("<a class='item-title-left' href=\"\">" + test.data[0].title + "</a>"
                     + "<a class='item-msg-left' href=\"\">" + test.data[0].des + "</a>"
-                    + "<div class='item-btn-left'>"
-                    + "<a class='newA-down' href=\"\">"
-                    + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
+                    + "<div class='btn-left'>"
+                    +"<a class='newA-left' href=\"\">"
+                    + "<span class='btn-content-left'>了解更多</span>" + "<img src='image/icon-btn.png'>"
                     + "</a>"
-                    + "</div>"
+                    +"</div>"
                     + "<img class='item-img-left' src=\" " + test.data[0].img + "\">");
             })
             $(function () {
-                for (var i = 1; i < test.data.length; i++) {
-                    $(".item2-2").append("<div class='item-right'>" +
+                for (var i = 1; i < test.data.length / 2; i++) {
+                    console.log(i)
+                    $(".row1").append("<div class='item-right'>" +
                         "<a class='item-title-right' href=\"\">" + test.data[i].title + "</a>"
                         + "<a class='item-msg-right' href=\"\">" + test.data[i].des + "</a>"
-                        + "<div class='item-btn-right'>"
-                        + "<a class='newA-down' href=\"\">"
-                        + "<span class='btn-content'>了解更多</span>" + "<span class='btn-img'></span>"
+                        + "<div class='btn-right'>"
+                        + "<a class='newA-right' href=\"\">"
+                        + "<span class='btn-content-right'>了解更多</span>" + "<img src='image/icon-btn.png'>"
                         + "</a>"
                         + "</div>"
                         + "<img class='item-img-right' src=\" " + test.data[i].img + "\">" +
                         "</div>");
                     console.log("添加div成功");
+                }
+            })
+            $(function () {
+                var j = test.data.length;
+                for (var i = (j + 1) / 2; i < j; i++) {
+                    console.log(i);
+                    $(".row2").append("<div class='item-right'>" +
+                        "<a class='item-title-right' href=\"\">" + test.data[i].title + "</a>"
+                        + "<a class='item-msg-right' href=\"\">" + test.data[i].des + "</a>"
+                        + "<div class='btn-right'>"
+                        + "<a class='newA-right' href=\"\">"
+                        + "<span class='btn-content-right'>了解更多</span>" + "<img src='image/icon-btn.png'>"
+                        + "</a>"
+                        + "</div>"
+                        + "<img class='item-img-right' src=\" " + test.data[i].img + "\">" +
+                        "</div>");
                 }
             })
         </script>
